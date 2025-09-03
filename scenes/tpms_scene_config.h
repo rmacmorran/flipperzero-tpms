@@ -1,5 +1,6 @@
 ADD_SCENE(tpms, start, Start)
 ADD_SCENE(tpms, about, About)
+ADD_SCENE(tpms, config_guide, ConfigGuide)
 ADD_SCENE(tpms, receiver, Receiver)
 ADD_SCENE(tpms, relearn_config, Relearn)
 ADD_SCENE(tpms, receiver_config, ReceiverConfig)

@@ -2,6 +2,7 @@
 
 typedef enum {
     SubmenuIndexTPMSReceiver,
+    SubmenuIndexTPMSConfigGuide,
     SubmenuIndexTPMSRelearn,
     SubmenuIndexTPMSAbout,
 } SubmenuIndex;
@@ -18,6 +19,8 @@ void tpms_scene_start_on_enter(void* context) {
 
     submenu_add_item(
         submenu, "Read TPMS", SubmenuIndexTPMSReceiver, tpms_scene_start_submenu_callback, app);
+    submenu_add_item(
+        submenu, "Config Guide", SubmenuIndexTPMSConfigGuide, tpms_scene_start_submenu_callback, app);
     submenu_add_item(
         submenu, "Relearn", SubmenuIndexTPMSRelearn, tpms_scene_start_submenu_callback, app);
     // Help
@@ -45,6 +48,9 @@ bool tpms_scene_start_on_event(void* context, SceneManagerEvent event) {
             consumed = true;
         } else if(event.event == SubmenuIndexTPMSReceiver) {
             scene_manager_next_scene(app->scene_manager, TPMSSceneReceiver);
+            consumed = true;
+        } else if(event.event == SubmenuIndexTPMSConfigGuide) {
+            scene_manager_next_scene(app->scene_manager, TPMSSceneConfigGuide);
             consumed = true;
         } else if(event.event == SubmenuIndexTPMSRelearn) {
             scene_manager_next_scene(app->scene_manager, TPMSSceneRelearn);

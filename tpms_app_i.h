@@ -19,6 +19,7 @@
 #include <lib/subghz/receiver.h>
 #include <lib/subghz/transmitter.h>
 #include <lib/subghz/registry.h>
+#include <lib/subghz/devices/devices.h>
 
 #include "helpers/radio_device_loader.h"
 
